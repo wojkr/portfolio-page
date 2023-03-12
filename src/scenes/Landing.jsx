@@ -19,14 +19,14 @@ const Landing = ({ setSelectedPage }) => {
           <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full before:border-2 before:border-blue before:z-[-1]">
             <img
               alt="profile"
-              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
+              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full "
               src="/assets/profile-image.png"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px]"
+            className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
             src="/assets/profile-image.png"
           />
         )}
@@ -44,16 +44,16 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-playfair text-center md:text-start">
-            Jane{" "}
-            <span className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[45px] before:-top-[120px] before:z-[-1]">
-              Esper
+          <p className="text-5xl font-playfair text-center md:text-start">
+            <span className="text-6xl">W</span>OJCIECH{" "}
+            <span className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[75px] before:-top-[120px] before:z-[-10]">
+              <span className="text-6xl z-30"> K</span>RUPA
             </span>
           </p>
-          <p className="mt-10 mb-7 text-sm text-center md:text-start ">
-            Qui quos cumque dolorum perspiciatis tempore earum inventore alias
-            sit at doloremque expedita repellendus necessitatibus, rerum
-            accusamus beatae nihil reiciendis esse blanditiis.
+          <p className="mt-10 mb-7 text-sm text-center md:text-start font-playfair">
+            I am a passionate and motivated individual who is eager to kickstart
+            my career in web development as a junior full-stack developer. I
+            have a degree in aircraft engines and I am also a talented musician.
           </p>
         </motion.div>
 

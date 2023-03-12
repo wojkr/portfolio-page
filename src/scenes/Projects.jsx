@@ -50,14 +50,21 @@ const Projects = ({ setSelectedPage }) => {
         onViewportEnter={() => setSelectedPage("projects")}
       >
         <p className="font-playfair mb-2 font-semibold text-4xl">
-          <span className="text-red ">PRO</span>JECTS
+          <span className="text-blue">PRO</span>JECTS
         </p>
         <div className="flex justify-center mt-5">
           <LineGradient width="w-1/3" />
         </div>
-        <p className="font-playfair text-sm mt-10 mb-7 ">
-          Animi exercitationem hic dolorem, laudantium architecto eligendi, nam
-          libero repellat aperiam placeat.
+        <p className="font-playfair text-sm mt-10 mb-2 ">
+          I am constantly expanding my{" "}
+          <span className="text-blue">knowledge</span> in my spare time after my
+          job. Each project presented unique challenges that I was able to
+          overcome through <span className="text-blue">creativity</span> and{" "}
+          <span className="text-blue">problem-solving</span> skills.
+        </p>
+        <p className="font-playfair text-sm mb-7 ">
+          Through my training in various technologies, I have developed the
+          following projects:
         </p>
       </motion.div>
 
