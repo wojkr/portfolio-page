@@ -1,7 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-
+import useMediaQuery from "../hooks/useMediaQuery";
 const Contact = ({ setSelectedPage }) => {
   const {
     register,
@@ -18,11 +18,13 @@ const Contact = ({ setSelectedPage }) => {
     }
   };
 
+  const isAboveMediumScreen = useMediaQuery("(min-width:1060px)");
+
   return (
     <section id="contact" className="py-48">
       {/* HEADING */}
       <motion.div
-        className="flex justify-end w-full  "
+        className="flex justify-center md:justify-end w-full  "
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -35,16 +37,16 @@ const Contact = ({ setSelectedPage }) => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow ">CONTACT</span> ME
+            <span className="text-primary-3 ">CONTACT</span> ME
           </p>
-          <div className="flex md:justify-end my-5">
+          <div className="flex justify-center md:justify-end my-5">
             <LineGradient width="w-1/2" />
           </div>
         </div>
       </motion.div>
 
       {/* FORM & IMAGE */}
-      <div className="md:flex md:justify-between gap-16 mt-5">
+      <div className="md:flex md:justify-between gap-32 mt-5">
         <motion.div
           className="basis-1/2 flex justify-center"
           initial="hidden"
@@ -56,7 +58,13 @@ const Contact = ({ setSelectedPage }) => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <img src="assets/contact-image.jpeg" alt="contact" />
+          {isAboveMediumScreen ? (
+            <div className="relative before:absolute md:before:border-2  before:border-primary-2 before:-right-20 before:-top-20  before:w-full  before:z-[-1] before:h-full ">
+              <img src="assets/contact-image.jpeg" alt="contact" />
+            </div>
+          ) : (
+            <img src="assets/contact-image.jpeg" alt="contact" />
+          )}
         </motion.div>
 
         {/* FORM SECTION */}
@@ -79,9 +87,9 @@ const Contact = ({ setSelectedPage }) => {
             method="POST"
           >
             {/* NAME */}
-            <div className="my-4">
+            <div className="mb-4">
               <input
-                className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+                className="w-full bg-primary-1 font-semibold placeholder-opaque-black p-3"
                 placeholder="NAME"
                 type="text"
                 {...register("name", {
@@ -91,7 +99,7 @@ const Contact = ({ setSelectedPage }) => {
                 })}
               />
               {errors.name && (
-                <p className="text-red mt-1">
+                <p className="text-primary-2 mt-1 text-right drop-shadow-accent">
                   {errors.name.type === "required" && "This field is required"}
                   {errors.name.type === "maxLength" &&
                     "Max length is 100 char."}
@@ -103,7 +111,7 @@ const Contact = ({ setSelectedPage }) => {
             {/* EMAIL */}
             <div className="my-4">
               <input
-                className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+                className="w-full bg-primary-1 font-semibold placeholder-opaque-black p-3"
                 placeholder="EMAIL"
                 type="email"
                 {...register("email", {
@@ -112,7 +120,7 @@ const Contact = ({ setSelectedPage }) => {
                 })}
               />
               {errors.email && (
-                <p className="text-red mt-1">
+                <p className="text-primary-2 mt-1 text-right drop-shadow-accent">
                   {errors.email.type === "required" && "This field is required"}
                   {errors.email.type === "pattern" && "Invalid email address"}
                 </p>
@@ -122,12 +130,13 @@ const Contact = ({ setSelectedPage }) => {
             {/* MESSAGE */}
             <div className="my-4">
               <textarea
-                className="w-full bg-blue font-semibold placeholder-opaque-black p-3"
+                className="w-full bg-primary-1 font-semibold placeholder-opaque-black p-3 resize-none "
                 placeholder="MESSAGE"
+                rows="7"
                 {...register("message", { required: true })}
               ></textarea>
               {errors.message && (
-                <p className="text-red mt-1">
+                <p className="text-primary-2 mt-1 text-right drop-shadow-accent">
                   {errors.message.type === "required" &&
                     "This field is required"}
                   {errors.message.type === "maxLength" &&
@@ -137,7 +146,7 @@ const Contact = ({ setSelectedPage }) => {
             </div>
 
             <button
-              className="p-5 bg-yellow font-semibold text-deep-blue mt-5 hover:bg-red hover:text-white transition duration-500"
+              className="p-5 bg-primary-3 font-semibold  text-deep-primary1bg-primary-1 mt-5 hover:bg-primary-2 hover:text-white transition duration-500"
               type="submit"
             >
               SEND ME A MESSAGE

@@ -5,13 +5,18 @@ module.exports = {
   theme: {
     extend: {
       dropShadow: {
-        accent: "0 0 0.6rem #111",
+        accent: "0 0 0.6rem #222",
       },
       colors: {
-        "deep-blue": "#2C233D",
-        blue: "#3CAEA3",
-        red: "#F39C12",
-        yellow: "#97CE4C",
+        "dark-1": "#2C233D",
+
+        "primary-1": "#3CAEA3",
+        "primary-2": "#F39C12",
+        "primary-3": "#97CE4C",
+        "primary-light-1": "#a4e0da",
+        "primary-light-2": "#f8c572",
+        "primary-light-3": "#c5e49b",
+
         grey: "#ededed",
         "dark-grey": "#757575",
         "opaque-black": "rgba(0,0,0,0.35)",
@@ -20,8 +25,9 @@ module.exports = {
         "gradient-rainbow":
           "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
 
-        "gradient-rainblue":
-          "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
+        "gradient-1":
+          // "linear-gradient(90deg, #24CBFF 14.53%, #FC59FF 69.36%, #FFBD0C 117.73%)",
+          "linear-gradient(90deg, #3CAEA3 14.53%, #F39C12 69.36%, #97CE4C 117.73%)",
       }),
       fontFamily: {
         playfair: ["Playfair Display", "serif"],

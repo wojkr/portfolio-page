@@ -13,7 +13,7 @@ const projectVariant = {
 
 const Project = ({ title }) => {
   const overlayStyles = `absolute  h-full w-full max-w-[400px] opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center  p-16 text-deep-blue`;
+    bg-grey z-30 flex flex-col justify-center items-center text-center  p-16 text-dark-1`;
 
   const projectTitle = title
     .trim()
@@ -50,17 +50,17 @@ const Projects = ({ setSelectedPage }) => {
         onViewportEnter={() => setSelectedPage("projects")}
       >
         <p className="font-playfair mb-2 font-semibold text-4xl">
-          <span className="text-blue">PRO</span>JECTS
+          <span className="text-primary-1">PRO</span>JECTS
         </p>
         <div className="flex justify-center mt-5">
           <LineGradient width="w-1/3" />
         </div>
         <p className="font-playfair text-sm mt-10 mb-2 ">
           I am constantly expanding my{" "}
-          <span className="text-blue">knowledge</span> in my spare time after my
-          job. Each project presented unique challenges that I was able to
-          overcome through <span className="text-blue">creativity</span> and{" "}
-          <span className="text-blue">problem-solving</span> skills.
+          <span className="text-primary-1">knowledge</span> in my spare time
+          after my job. Each project presented unique challenges that I was able
+          to overcome through <span className="text-primary-1">creativity</span>{" "}
+          and <span className="text-primary-1">problem-solving</span> skills.
         </p>
         <p className="font-playfair text-sm mb-7 ">
           Through my training in various technologies, I have developed the
@@ -79,7 +79,7 @@ const Projects = ({ setSelectedPage }) => {
           onViewportEnter={() => setSelectedPage("projects")}
         >
           <div
-            className="flex justify-center text-center items-center p-10 bg-red
+            className="flex justify-center text-center items-center p-10 bg-primary-2
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
             BEAUTIFUL USER INTERFACES
@@ -92,7 +92,7 @@ const Projects = ({ setSelectedPage }) => {
           <Project title="Project 6" />
           <Project title="Project 7" />
           <div
-            className="flex justify-center text-center items-center p-10 bg-red
+            className="flex justify-center text-center items-center p-10 bg-primary-2
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
             SMOOTH USER EXPIRIENCE

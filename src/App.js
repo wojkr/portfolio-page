@@ -13,10 +13,17 @@ function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
-
   useEffect(() => {
     const handleScroll = () => {
-      window.scrollY === 0 ? setIsTopOfPage(true) : setIsTopOfPage(false);
+      console.log(window.scrollY);
+      console.log("get");
+      if (window.scrollY === 0) {
+        setIsTopOfPage(true);
+        setSelectedPage("home");
+      }
+      if (window.scrollY !== 0) {
+        setIsTopOfPage(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -31,7 +38,7 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:min-h-full">
         {isAboveMediumScreens && (
           <DotGroup
             selectedPage={selectedPage}
@@ -41,7 +48,7 @@ function App() {
         <Landing setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:min-h-full">
         <MySkills setSelectedPage={setSelectedPage} />
       </div>
       <LineGradient />

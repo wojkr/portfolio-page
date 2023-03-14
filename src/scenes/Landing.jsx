@@ -5,6 +5,7 @@ import SocialMediaIcons from "../components/SocialMediaIcons";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery(`(min-width:1060px)`);
+  // alert("CHECK THE PACKAGE JSON FOR THE NAME OF REPO");
   return (
     <section
       id="home"
@@ -13,20 +14,20 @@ const Landing = ({ setSelectedPage }) => {
       {/* IMAGE */}
       <motion.div
         onViewportEnter={() => setSelectedPage("home")}
-        className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32"
+        className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32 "
       >
         {isAboveMediumScreens ? (
-          <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px] before:w-full before:max-w-[400px] before:h-full before:border-2 before:border-blue before:z-[-1]">
+          <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-[400px] before:w-full before:max-w-[400px] before:h-full before:max-h-[400px] md:before:max-w-[600px] md:before:max-h-[600px] before:border-2 before:border-primary-1 before:z-[-1]">
             <img
               alt="profile"
-              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full "
+              className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-full "
               src="/assets/profile-image.png"
             />
           </div>
         ) : (
           <img
             alt="profile"
-            className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
+            className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-full "
             src="/assets/profile-image.png"
           />
         )}
@@ -44,9 +45,9 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-5xl font-playfair text-center md:text-start">
+          <p className="text-5xl font-playfair text-center md:text-start xs:whitespace-nowrap">
             <span className="text-6xl">W</span>OJCIECH{" "}
-            <span className="xs:relative xs:text-deep-blue xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[75px] before:-top-[120px] before:z-[-10]">
+            <span className="xs:relative xs:text-dark-1 xs:font-semibold z-20 xs:before:content-brush before:absolute before:-left-[75px] before:-top-[120px] before:z-[-10]">
               <span className="text-6xl z-30"> K</span>RUPA
             </span>
           </p>
@@ -70,18 +71,18 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-rainblue text-deep-blue rounded-sm py-3 px-7 font-semibold hover:bg-blue hover:text-white transition duration-500"
+            className="bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounder-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+            className="rounder-r-sm bg-gradient-1 py-0.5 pr-0.5"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            <div className="bg-deep-blue hover:text-red transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10">
+            <div className="bg-dark-1 hover:text-primary-2 transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10">
               Let's talk.
             </div>
           </AnchorLink>

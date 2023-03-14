@@ -27,7 +27,7 @@ const MySkills = ({ setSelectedPage }) => {
   return (
     <section id="skills" className="gap-16 py-10">
       {/* FIRST ROW */}
-      <div className="md:flex justify-between md:items-start mt-32">
+      <div className="md:flex justify-between md:text-start text-center md:items-start mt-32 gap-20">
         <motion.div
           className="md:w-1/3  "
           initial="hidden"
@@ -42,31 +42,33 @@ const MySkills = ({ setSelectedPage }) => {
         >
           {/* /MY SKILLS COLUMN */}
           <p className="font-playfair mb-2 font-semibold text-4xl">
-            MY <span className="text-red ">SKILLS</span>{" "}
-          </p>
-          <LineGradient width="w-1/4" />
-          <p className="font-playfair font-extralight text-sm mt-5 mb-10">
+            MY <span className="text-primary-2 ">SKILLS</span>{" "}
+          </p>{" "}
+          <div className="flex justify-center md:justify-start my-5">
+            <LineGradient width="w-1/4" />
+          </div>
+          <p className="font-playfair font-extralight text-sm mt-5 mb-10  drop-shadow-accent ">
             My background includes a bachelor's degree in mechanical
             engineering, which provided me with a deep understanding of design
             and problem-solving. Furthermore, I have honed my{" "}
-            <span className="text-red ">creativity</span> as a talented
+            <span className="text-primary-2 ">creativity</span> as a talented
             musician, having taught drums for Yamaha Music Europe. With
-            <span className="text-red "> experience </span>
+            <span className="text-primary-2 "> experience </span>
             as a customer advisor in a finance company and currently working as
             an assistant manager in a hotel, I have excellent{" "}
-            <span className="text-red ">communication skills </span> and I am
-            great with customers.
+            <span className="text-primary-2 ">communication skills </span> and I
+            am great with customers.
             <br /> I am confident that my combination of technical{" "}
-            <span className="text-red ">knowledge</span> and creativity, as well
-            as my ability to communicate effectively, make me a{" "}
-            <span className="text-red ">strong candidate</span> for junior web
-            development position.
+            <span className="text-primary-2 ">knowledge</span> and creativity,
+            as well as my ability to communicate effectively, make me a{" "}
+            <span className="text-primary-2 ">strong candidate</span> for junior
+            web development position.
           </p>
         </motion.div>
         {/* /IMAGE */}
         <div className=" flex-grow-1 ">
           {isAboveMediumScreens ? (
-            <motion.div className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-blue before:border-2 before:w-[100%] before:h-full">
+            <motion.div className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full">
               <img src="assets/skills-image.png" alt="" />
             </motion.div>
           ) : (
@@ -89,45 +91,48 @@ const MySkills = ({ setSelectedPage }) => {
           }}
           className="md:w-1/4 mb-16"
         >
-          <div className="pb-2 relative before:absolute before:h-full before:bg-blue before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
+          <div className="pb-2 relative before:absolute before:h-full before:bg-primary-1 before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
             <p className="font-semibold text-4xl mb-2">01</p>
-            <p className="font-semibold text-4xl mb-2 drop-shadow-accent ">
-              <span className="text-blue ">Front</span> End:
+            <p className="font-semibold text-4xl mb-2 drop-shadow-accent">
+              <span className="md:text-primary-light-1 text-primary-1 ">
+                Front
+              </span>{" "}
+              End:
             </p>
           </div>
 
           <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
               {" "}
-              <SiReact className="text-5xl text-blue" />
+              <SiReact className="text-5xl text-primary-1" />
               React
             </div>
             <div className="flex flex-col justify-center items-center  text-center">
-              <SiRedux className="text-5xl text-blue" />
+              <SiRedux className="text-5xl text-primary-1" />
               Redux <br /> Toolkit
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiVite className="text-5xl text-blue" />
+              <SiVite className="text-5xl text-primary-1" />
               Vite
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
-              <SiTailwindcss className="text-5xl text-blue" />
+              <SiTailwindcss className="text-5xl text-primary-1" />
               Tailwind
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiMui className="text-5xl text-blue" />
+              <SiMui className="text-5xl text-primary-1" />
               MUI
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
-              <SiBootstrap className="text-5xl text-blue" />
+              <SiBootstrap className="text-5xl text-primary-1" />
               Bootstrap
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiSass className="text-5xl text-blue" />
+              <SiSass className="text-5xl text-primary-1" />
               SCSS{" "}
             </div>
           </div>
@@ -143,30 +148,33 @@ const MySkills = ({ setSelectedPage }) => {
           }}
           className="md:w-1/4 mb-16"
         >
-          <div className="pb-2 relative before:absolute before:h-full before:bg-red before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
+          <div className="pb-2 relative before:absolute before:h-full before:bg-primary-2 before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
             <p className=" font-semibold text-4xl mb-2">02</p>
             <p className="font-semibold text-4xl mb-2 drop-shadow-accent ">
-              <span className="text-red ">Back</span> End:
+              <span className="md:text-primary-light-2 text-primary-2 ">
+                Back
+              </span>{" "}
+              End:
             </p>
           </div>
           <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
-              <SiNodedotjs className="text-5xl text-red" />
+              <SiNodedotjs className="text-5xl text-primary-2" />
               Node.js
             </div>
             <div className="flex flex-col justify-center items-center text-center">
-              <SiNpm className="text-5xl text-red" />
+              <SiNpm className="text-5xl text-primary-2" />
               Node Package
               <br /> Manager
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
-              <SiExpress className="text-5xl text-red" />
+              <SiExpress className="text-5xl text-primary-2" />
               Express
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiMongodb className="text-5xl text-red" />
+              <SiMongodb className="text-5xl text-primary-2" />
               MongoDB
             </div>
           </div>
@@ -182,56 +190,59 @@ const MySkills = ({ setSelectedPage }) => {
           }}
           className="md:w-1/4 mb-16"
         >
-          <div className="pb-2 relative before:absolute before:h-full before:bg-yellow before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
+          <div className="pb-2 relative before:absolute before:h-full before:bg-primary-3 before:z-[-1] before:w-1/2 before:left-1/2 md:before:w-3/4 md:before:left-1/4">
             <p className="font-semibold text-4xl mb-2">03</p>
             <p className="font-semibold text-4xl mb-2 drop-shadow-accent ">
-              And <span className="text-yellow ">More:</span>
+              <span className="md:text-primary-light-3 text-primary-3">
+                And
+              </span>{" "}
+              More:
             </p>
           </div>
           <div className="flex justify-evenly items-center my-5 text-center">
             <div className="flex flex-col justify-center items-center">
               {" "}
-              <SiJavascript className="text-5xl text-yellow" />
+              <SiJavascript className="text-5xl text-primary-3" />
               Javascript
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiTypescript className="text-5xl text-yellow" />
+              <SiTypescript className="text-5xl text-primary-3" />
               Typescript
             </div>
           </div>
 
           <div className="flex justify-evenly items-center my-5 ">
             <div className="flex flex-col justify-center items-center">
-              <SiGit className="text-5xl text-yellow" />
+              <SiGit className="text-5xl text-primary-3" />
               Git
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiGithub className="text-5xl text-yellow" />
+              <SiGithub className="text-5xl text-primary-3" />
               GitHub
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5 ">
             <div className="flex flex-col justify-center items-center">
-              <SiHoppscotch className="text-5xl text-yellow" />
+              <SiHoppscotch className="text-5xl text-primary-3" />
               Hoppscotch
             </div>
             <div className="flex flex-col justify-center items-center text-center">
-              <TbExchange className="text-5xl text-yellow" />
+              <TbExchange className="text-5xl text-primary-3" />
               REST <br />
               API
             </div>
             <div className="flex flex-col justify-center items-center ">
-              <TbClockPause className="text-5xl text-yellow " />
+              <TbClockPause className="text-5xl text-primary-3 " />
               AJAX
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5 ">
             <div className="flex flex-col justify-center items-center">
-              <SiFirebase className="text-5xl text-yellow" />
+              <SiFirebase className="text-5xl text-primary-3" />
               Firebase
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiGoogle className="text-5xl text-yellow" />
+              <SiGoogle className="text-5xl text-primary-3" />
               Googling
             </div>
           </div>

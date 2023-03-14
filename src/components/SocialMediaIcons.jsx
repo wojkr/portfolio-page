@@ -1,13 +1,19 @@
-const SocialMediaIcons = () => {
+import { SiGithub, SiLinkedin } from "react-icons/si";
+
+const SocialMediaIcons = ({ color = false }) => {
   return (
-    <div className="flex justify-center md:justify-start my-10 gap-7">
+    <div
+      className={`${
+        color ? `text-${color}` : ""
+      } flex justify-center md:justify-start my-10 gap-7 text-3xl`}
+    >
       <a
         href="https://www.linkedin.com/in/wojciech-w-krupa/"
         target="_blank"
         className="hover:opacity-50 transition duration-500"
         rel="noreferrer"
       >
-        <img src="/assets/linkedin.png" alt="linkedin-link" />
+        <SiLinkedin />
       </a>
 
       <a
@@ -16,7 +22,7 @@ const SocialMediaIcons = () => {
         className="hover:opacity-50 transition duration-500 h-[30px] w-[30px]"
         rel="noreferrer"
       >
-        <img src="/assets/github-mark-white.png" alt="instagram-link" />
+        <SiGithub />
       </a>
     </div>
   );

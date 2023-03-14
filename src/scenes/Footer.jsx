@@ -1,14 +1,14 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
 const Footer = () => {
   return (
-    <footer className="h-64 bg-red pt-10">
+    <footer className="h-64 bg-primary-2 bg-gradient-1 pt-10">
       <div className="w-5/6 mx-auto">
-        <SocialMediaIcons />
+        <SocialMediaIcons color="dark-1" />
         <div className="md:flex justify-center md:justify-between text-center">
-          <p className="font-playfair font-semibold text-2xl text-yellow">
+          <p className="font-playfair font-semibold text-2xl text-dark-1">
             BULA{" "}
           </p>
-          <p className="font-playfair text-md text-yellow">
+          <p className="font-playfair text-md text-dark-1">
             &copy;2023 VOYCHY. All Rights Reserved.
           </p>
         </div>
