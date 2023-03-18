@@ -60,10 +60,10 @@ const Contact = ({ setSelectedPage }) => {
         >
           {isAboveMediumScreen ? (
             <div className="relative before:absolute md:before:border-2  before:border-primary-2 before:-right-20 before:-top-20  before:w-full  before:z-[-1] before:h-full ">
-              <img src="assets/contact-image.jpeg" alt="contact" />
+              <img src="assets/contact-image.jpg" alt="contact" />
             </div>
           ) : (
-            <img src="assets/contact-image.jpeg" alt="contact" />
+            <img src="assets/contact-image.jpg" alt="contact" />
           )}
         </motion.div>
 

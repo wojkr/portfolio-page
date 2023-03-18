@@ -69,11 +69,11 @@ const MySkills = ({ setSelectedPage }) => {
         <div className=" flex-grow-1 ">
           {isAboveMediumScreens ? (
             <motion.div className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full">
-              <img src="assets/skills-image.png" alt="" />
+              <img src="assets/skills-image.jpg" alt="" />
             </motion.div>
           ) : (
             <motion.div>
-              <img src="assets/skills-image.png" alt="" />
+              <img src="assets/skills-image.jpg" alt="" />
             </motion.div>
           )}
         </div>

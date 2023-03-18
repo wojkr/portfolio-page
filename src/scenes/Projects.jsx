@@ -30,7 +30,7 @@ const Project = ({ title }) => {
           aut laborum iure vitae accusamus molestiae asperiores.
         </p>
       </div>
-      <img src={`assets/${projectTitle}.jpeg`} alt={projectTitle} />
+      <img src={`assets/${projectTitle}.jpg`} alt={projectTitle} />
     </motion.div>
   );
 };
