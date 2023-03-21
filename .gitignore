@@ -27,8 +27,4 @@ yarn-error.log*
 toDos.txt
 
 /public/assets/source
-/public/assets/brush-0.png
-/public/assets/brush-1.png
-/public/assets/brush-3.png
-/public/assets/brush-light.png
-/public/assets/brush-lines.png
+/public/assets/old

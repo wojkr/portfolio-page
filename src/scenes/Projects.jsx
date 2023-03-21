@@ -24,7 +24,7 @@ const Project = ({ title, name, desc }) => {
   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
-        <p className="text-2xl font-playfair ">{name}</p>
+        {name !== "" && <p className="text-2xl font-playfair ">{name}</p>}
         <p className=" mt-7 sm:mt-0 lg:mt-7  font-playfair">{desc}</p>
       </div>
       <img src={`assets/${projectTitle}.jpg`} alt={name} />
@@ -109,7 +109,7 @@ const Projects = ({ setSelectedPage }) => {
           <Project
             title="Project 4"
             name="SweetApp"
-            desc="The pudding rating website - my first full-stack project, and features an interactive map. I focused on the backend: NodeJS Express, MongoDB, full Passport Auth with confirmation. In the project also: EJS for rendering views, Cloudinary for uploading images, Helmet for security, and Joi for validation."
+            desc="The pudding rating website, with an interactive map. My first full-stack project, backend focused: NodeJS Express, Mongo DB, full Passport Auth with confirmation. In the project also: EJS for rendering views, Cloudinary for uploading images, Helmet for security, and Joi for validation."
           />
           <Project
             title="Project 2"
@@ -118,7 +118,7 @@ const Projects = ({ setSelectedPage }) => {
           />
           <Project
             title="Project 7"
-            name="Wojciech Krupa"
+            name=""
             desc="The portfolio website that you are currently viewing was developed using a modern technology stack, which includes React, Tailwind, and Framer-Motion. My objective was to create a visually appealing design that highlights my work and skills in a professional and engaging manner."
           />
           <div

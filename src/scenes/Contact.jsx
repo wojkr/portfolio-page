@@ -13,8 +13,28 @@ const Contact = ({ setSelectedPage }) => {
     console.log("~ e", e);
     alert("change EMAIL IN THE FORM! GET THE LINK FROM ACTIVATION LINK ");
     const isValid = await trigger();
+    e.preventDefault();
     if (!isValid) {
-      e.preventDefault();
+    } else {
+      fetch("https://formsubmit.co/ajax/test.wojkr@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.log(error));
+
+      // alert("hey up", e.target);
+      // console.log(
+      //   "hey up",
+      //   e.target[0].name,
+      //   e.target[0].value,
+      //   Object.fromEntries(new FormData(e.target))
+      // );
     }
   };
 
@@ -81,10 +101,9 @@ const Contact = ({ setSelectedPage }) => {
         >
           {/* FORM */}
           <form
-            target="_blank"
+            // target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/test.wojkr@gmail.com"
-            method="POST"
+            // method="POST"
           >
             {/* NAME */}
             <div className="mb-4">
