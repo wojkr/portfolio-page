@@ -14,6 +14,7 @@ import {
   SiMui,
   SiNodedotjs,
   SiNpm,
+  SiPhotopea,
   SiReact,
   SiRedux,
   SiSass,
@@ -125,15 +126,19 @@ const MySkills = ({ setSelectedPage }) => {
               <SiMui className="text-5xl text-primary-1" />
               MUI
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
               <SiBootstrap className="text-5xl text-primary-1" />
               Bootstrap
             </div>
+          </div>
+          <div className="flex justify-evenly items-center my-5">
             <div className="flex flex-col justify-center items-center">
               <SiSass className="text-5xl text-primary-1" />
               SCSS{" "}
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <SiPhotopea className="text-5xl text-primary-1" />
+              Photopea
             </div>
           </div>
         </motion.div>

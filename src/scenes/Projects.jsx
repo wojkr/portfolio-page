@@ -11,9 +11,9 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title }) => {
+const Project = ({ title, name, desc }) => {
   const overlayStyles = `absolute  h-full w-full max-w-[400px] opacity-0 hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center  p-16 text-dark-1`;
+    bg-grey z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
 
   const projectTitle = title
     .trim()
@@ -24,13 +24,10 @@ const Project = ({ title }) => {
   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
-        <p className="text-2xl font-playfair">{title}</p>
-        <p className="mt-7 ">
-          Eum laboriosam officia sequi, ex ad nesciunt alias unde quas tenetur,
-          aut laborum iure vitae accusamus molestiae asperiores.
-        </p>
+        <p className="text-2xl font-playfair ">{name}</p>
+        <p className=" mt-7 sm:mt-0 lg:mt-7  font-playfair">{desc}</p>
       </div>
-      <img src={`assets/${projectTitle}.jpg`} alt={projectTitle} />
+      <img src={`assets/${projectTitle}.jpg`} alt={name} />
     </motion.div>
   );
 };
@@ -79,23 +76,61 @@ const Projects = ({ setSelectedPage }) => {
           onViewportEnter={() => setSelectedPage("projects")}
         >
           <div
-            className="flex justify-center text-center items-center p-10 bg-primary-2
+            className="flex justify-center text-center items-center py-16 bg-primary-2
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            BEAUTIFUL USER INTERFACES
+            <p className="">
+              FRONT-END <br />
+              <span className="font-thin text-xl italic">
+                Visually Stunning UI
+              </span>
+            </p>
           </div>
-          <Project title="Project 1" />
-          <Project title="Project 2" />
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          <Project
+            title="Project 6"
+            name="CardioLab Fitness"
+            desc="This project is front-end focused, with a priority on custom-made PNGs and UX design. CardioLab Fitness website was built using React, TypeScript, framer-motion, tailwindcss, vite and Photopea."
+          />
+          <Project
+            title="Project 5"
+            name="Rokku Social app"
+            desc='"Rokku" is a dynamic full-stack social media platform that offers users a customized experience with its light/dark mode feature. Built using MERN, Redux, and other technologies including formik, yup, bcrypt, cors, dotenv, express, helmet, jsonwebtoken, mongoose, morgan, and multer.'
+          />
+          <Project
+            title="Project 3"
+            name="pureCSS Solar System"
+            desc="The solar system animation project features all planets and some moons, with no use of JS. First time using SASS. Initially intending to maintain true planet-to-orbit diameter ratios; rescaled for better visual impact."
+          />
+          <Project
+            title="Project 1"
+            name="CoffeeHouse"
+            desc="Website with social media features using React, including a working email contact form, full auth with confirmation (Userfront), user accounts (CRUD), and a comment section (CRUD) with ratings and votes."
+          />
+          <Project
+            title="Project 4"
+            name="SweetApp"
+            desc="The pudding rating website - my first full-stack project, and features an interactive map. I focused on the backend: NodeJS Express, MongoDB, full Passport Auth with confirmation. In the project also: EJS for rendering views, Cloudinary for uploading images, Helmet for security, and Joi for validation."
+          />
+          <Project
+            title="Project 2"
+            name="Block Breaker"
+            desc="I created a game from scratch using VanillaJS and CSS, which includes 10 levels, 11 bonuses, 7 game modes, and control buttons for touchscreen devices. I continue to make incremental improvements to the project over time."
+          />
+          <Project
+            title="Project 7"
+            name="Wojciech Krupa"
+            desc="The portfolio website that you are currently viewing was developed using a modern technology stack, which includes React, Tailwind, and Framer-Motion. My objective was to create a visually appealing design that highlights my work and skills in a professional and engaging manner."
+          />
           <div
-            className="flex justify-center text-center items-center p-10 bg-primary-2
+            className="flex justify-center text-center items-center py-16 bg-primary-2
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
-            SMOOTH USER EXPIRIENCE
+            <p className="">
+              BACK-END <br />
+              <span className="font-thin text-xl italic">
+                Refined, smooth UX
+              </span>
+            </p>
           </div>
         </motion.div>
       </div>
