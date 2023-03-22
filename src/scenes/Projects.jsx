@@ -22,12 +22,12 @@ const Project = ({ title, name, desc, img }) => {
   const overlayStyles = `absolute  h-full w-full max-w-[400px] opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
 
-  const projectTitle = title
-    .trim()
-    .trimLeft()
-    .split(" ")
-    .join("-")
-    .toLowerCase();
+  // const projectTitle = title
+  //   .trim()
+  //   .trimLeft()
+  //   .split(" ")
+  //   .join("-")
+  //   .toLowerCase();
   return (
     <motion.div variants={projectVariant} className="relative">
       <div className={overlayStyles}>
@@ -78,7 +78,7 @@ const Projects = ({ setSelectedPage }) => {
           className="sm:grid sm:grid-cols-3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
           onViewportEnter={() => setSelectedPage("projects")}
         >
