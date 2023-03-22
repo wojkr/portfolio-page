@@ -14,12 +14,11 @@ const Contact = ({ setSelectedPage }) => {
 
   const onSubmit = async (e) => {
     console.log("~ e", e);
-    alert("change EMAIL IN THE FORM! GET THE LINK FROM ACTIVATION LINK ");
     const isValid = await trigger();
     e.preventDefault();
     if (!isValid) {
     } else {
-      fetch("https://formsubmit.co/ajax/test.wojkr@gmail.com", {
+      fetch("https://formsubmit.co/ajax/2dfe1cb18982311021ec0a63158f3740", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
