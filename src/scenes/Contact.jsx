@@ -2,6 +2,9 @@ import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
+
+import contactImage from "../assets/contact-image.jpg";
+
 const Contact = ({ setSelectedPage }) => {
   const {
     register,
@@ -80,10 +83,10 @@ const Contact = ({ setSelectedPage }) => {
         >
           {isAboveMediumScreen ? (
             <div className="relative before:absolute md:before:border-2  before:border-primary-2 before:-right-20 before:-top-20  before:w-full  before:z-[-1] before:h-full ">
-              <img src="assets/contact-image.jpg" alt="contact" />
+              <img src={contactImage} alt="contact" />
             </div>
           ) : (
-            <img src="assets/contact-image.jpg" alt="contact" />
+            <img src={contactImage} alt="contact" />
           )}
         </motion.div>
 

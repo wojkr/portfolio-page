@@ -23,6 +23,9 @@ import {
   SiVite,
 } from "react-icons/si";
 import { TbClockPause, TbExchange } from "react-icons/tb";
+
+import skillsImage from "../assets/skills-image.jpg";
+
 const MySkills = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
@@ -70,11 +73,11 @@ const MySkills = ({ setSelectedPage }) => {
         <div className=" flex-grow-1 ">
           {isAboveMediumScreens ? (
             <motion.div className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full">
-              <img src="assets/skills-image.jpg" alt="" />
+              <img src={skillsImage} alt="" />
             </motion.div>
           ) : (
             <motion.div>
-              <img src="assets/skills-image.jpg" alt="" />
+              <img src={skillsImage} alt="" />
             </motion.div>
           )}
         </div>

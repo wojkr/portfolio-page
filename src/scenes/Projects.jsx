@@ -1,5 +1,12 @@
 import { motion } from "framer-motion";
 import LineGradient from "../components/LineGradient";
+import projectImg1 from "../assets/project-1.jpg";
+import projectImg2 from "../assets/project-2.jpg";
+import projectImg3 from "../assets/project-3.jpg";
+import projectImg4 from "../assets/project-4.jpg";
+import projectImg5 from "../assets/project-5.jpg";
+import projectImg6 from "../assets/project-6.jpg";
+import projectImg7 from "../assets/project-7.jpg";
 
 const container = {
   hidden: {},
@@ -11,7 +18,7 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title, name, desc }) => {
+const Project = ({ title, name, desc, img }) => {
   const overlayStyles = `absolute  h-full w-full max-w-[400px] opacity-0 hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
 
@@ -27,7 +34,7 @@ const Project = ({ title, name, desc }) => {
         {name !== "" && <p className="text-2xl font-playfair ">{name}</p>}
         <p className=" mt-7 sm:mt-0 lg:mt-7  font-playfair">{desc}</p>
       </div>
-      <img src={`assets/${projectTitle}.jpg`} alt={name} />
+      <img src={img} alt={name} />
     </motion.div>
   );
 };
@@ -88,36 +95,43 @@ const Projects = ({ setSelectedPage }) => {
           </div>
           <Project
             title="Project 6"
+            img={projectImg6}
             name="CardioLab Fitness"
             desc="This project is front-end focused, with a priority on custom-made PNGs and UX design. CardioLab Fitness website was built using React, TypeScript, framer-motion, tailwindcss, vite and Photopea."
           />
           <Project
             title="Project 5"
+            img={projectImg5}
             name="Rokku Social app"
             desc='"Rokku" is a dynamic full-stack social media platform that offers users a customized experience with its light/dark mode feature. Built using MERN, Redux, and other technologies including formik, yup, bcrypt, cors, dotenv, express, helmet, jsonwebtoken, mongoose, morgan, and multer.'
           />
           <Project
             title="Project 3"
+            img={projectImg3}
             name="pureCSS Solar System"
             desc="The solar system animation project features all planets and some moons, with no use of JS. First time using SASS. Initially intending to maintain true planet-to-orbit diameter ratios; rescaled for better visual impact."
           />
           <Project
             title="Project 1"
+            img={projectImg1}
             name="CoffeeHouse"
             desc="Website with social media features using React, including a working email contact form, full auth with confirmation (Userfront), user accounts (CRUD), and a comment section (CRUD) with ratings and votes."
           />
           <Project
             title="Project 4"
+            img={projectImg4}
             name="SweetApp"
             desc="The pudding rating website, with an interactive map. My first full-stack project, backend focused: NodeJS Express, Mongo DB, full Passport Auth with confirmation. In the project also: EJS for rendering views, Cloudinary for uploading images, Helmet for security, and Joi for validation."
           />
           <Project
             title="Project 2"
+            img={projectImg2}
             name="Block Breaker"
             desc="I created a game from scratch using VanillaJS and CSS, which includes 10 levels, 11 bonuses, 7 game modes, and control buttons for touchscreen devices. I continue to make incremental improvements to the project over time."
           />
           <Project
             title="Project 7"
+            img={projectImg7}
             name=""
             desc="The portfolio website that you are currently viewing was developed using a modern technology stack, which includes React, Tailwind, and Framer-Motion. My objective was to create a visually appealing design that highlights my work and skills in a professional and engaging manner."
           />

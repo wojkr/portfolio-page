@@ -2,6 +2,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import profileImage from "../assets/profile-image.jpg";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveMediumScreens = useMediaQuery(`(min-width:1060px)`);
@@ -19,16 +20,16 @@ const Landing = ({ setSelectedPage }) => {
         {isAboveMediumScreens ? (
           <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-[400px] before:w-full before:max-w-[400px] before:h-full before:max-h-[400px] md:before:max-w-[600px] md:before:max-h-[600px] before:border-2 before:border-primary-1 before:z-[-1]">
             <img
+              src={profileImage}
               alt="profile"
               className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-full "
-              src="/assets/profile-image.png"
             />
           </div>
         ) : (
           <img
+            src={profileImage}
             alt="profile"
             className="hover:filter hover:saturate-200 transition duration-500 z-10 w-full max-w-[400px] md:max-w-[600px] rounded-full "
-            src="/assets/profile-image.png"
           />
         )}
       </motion.div>
