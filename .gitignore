@@ -28,3 +28,5 @@ toDos.txt
 
 /public/assets/source
 /public/assets/old
+
+/public/assets/*
