@@ -7,6 +7,11 @@ module.exports = {
       dropShadow: {
         accent: "0 0 0.6rem #222",
       },
+      boxShadow: {
+        primary1: "-4rem -4rem 0 -1px #2C233D,-4rem -4rem 0 1px #3CAEA3;",
+        primary2: "4rem -4rem 0 -1px #2C233D,4rem -4rem 0 1px #F39C12;",
+        primary3: "4rem -4rem 0 -1px #2C233D,4rem -4rem 0 1px #97CE4C;",
+      },
       colors: {
         "dark-1": "#2C233D",
 

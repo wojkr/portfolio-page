@@ -4,16 +4,20 @@ import { motion } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 import contactImage from "../assets/contact-image.jpg";
+import { useState } from "react";
 
 const Contact = ({ setSelectedPage }) => {
+  const [mailSentConfirmation, setMailSentConfirmation] = useState(false);
   const {
     register,
     trigger,
+    reset,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (e) => {
     console.log("~ e", e);
+    setMailSentConfirmation(false);
     const isValid = await trigger();
     e.preventDefault();
     if (!isValid) {
@@ -27,8 +31,16 @@ const Contact = ({ setSelectedPage }) => {
         body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
       })
         .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.log(error));
+        .then((data) => {
+          console.log(data);
+          reset();
+          setMailSentConfirmation(
+            "Your email has been sent successfully. Thank you for contacting us!"
+          );
+        })
+        .catch((error) => {
+          console.log(error);
+        });
 
       // alert("hey up", e.target);
       // console.log(
@@ -81,9 +93,11 @@ const Contact = ({ setSelectedPage }) => {
           }}
         >
           {isAboveMediumScreen ? (
-            <div className="relative before:absolute md:before:border-2  before:border-primary-2 before:-right-20 before:-top-20  before:w-full  before:z-[-1] before:h-full ">
-              <img src={contactImage} alt="contact" />
-            </div>
+            <img
+              src={contactImage}
+              alt="contact"
+              className="shadow-primary2 h-fit"
+            />
           ) : (
             <img src={contactImage} alt="contact" />
           )}
@@ -116,7 +130,7 @@ const Contact = ({ setSelectedPage }) => {
                 {...register("name", {
                   required: true,
                   maxLength: 100,
-                  pattern: /^[A-Za-z]+$/i,
+                  pattern: /^[A-Za-z ]+$/i,
                 })}
               />
               {errors.name && (
@@ -124,7 +138,8 @@ const Contact = ({ setSelectedPage }) => {
                   {errors.name.type === "required" && "This field is required"}
                   {errors.name.type === "maxLength" &&
                     "Max length is 100 char."}
-                  {errors.name.type === "pattern" && "Restricted chars."}
+                  {errors.name.type === "pattern" &&
+                    "Please enter a valid input. The input should only contain letters (uppercase or lowercase) and spaces."}
                 </p>
               )}
             </div>
@@ -165,13 +180,19 @@ const Contact = ({ setSelectedPage }) => {
                 </p>
               )}
             </div>
-
-            <button
-              className="p-5 bg-primary-3 font-semibold  text-deep-primary1bg-primary-1 mt-5 hover:bg-primary-2 hover:text-white transition duration-500"
-              type="submit"
-            >
-              SEND ME A MESSAGE
-            </button>
+            <div>
+              <button
+                className="p-5 bg-primary-3 font-semibold  text-deep-primary1bg-primary-1 hover:bg-primary-2 hover:text-white transition duration-500"
+                type="submit"
+              >
+                SEND ME A MESSAGE
+              </button>
+              {mailSentConfirmation && (
+                <p className="text-primary-3 mt-4 text-left drop-shadow-accent">
+                  {mailSentConfirmation}
+                </p>
+              )}
+            </div>
           </form>
         </motion.div>
       </div>
