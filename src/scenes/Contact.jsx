@@ -7,6 +7,7 @@ import contactImage from "../assets/contact-image.jpg";
 import { useState } from "react";
 
 const Contact = ({ setSelectedPage }) => {
+  const [isSubmited, setIsSubmited] = useState(false);
   const [mailSentConfirmation, setMailSentConfirmation] = useState(false);
   const {
     register,
@@ -15,40 +16,40 @@ const Contact = ({ setSelectedPage }) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (e) => {
-    console.log("~ e", e);
-    setMailSentConfirmation(false);
-    const isValid = await trigger();
-    e.preventDefault();
-    if (!isValid) {
-    } else {
-      fetch("https://formsubmit.co/ajax/2dfe1cb18982311021ec0a63158f3740", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+  const sendEmail = async (e) => {
+    await fetch("https://formsubmit.co/ajax/2dfe1cb18982311021ec0a63158f3740", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(e.target))),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        reset();
+        setMailSentConfirmation(
+          "Your email has been sent successfully. Thank you for contacting us!"
+        );
+        setIsSubmited(false);
       })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-          reset();
-          setMailSentConfirmation(
-            "Your email has been sent successfully. Thank you for contacting us!"
-          );
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      .catch((error) => {
+        console.log(error);
+        setIsSubmited(false);
+      });
+  };
 
-      // alert("hey up", e.target);
-      // console.log(
-      //   "hey up",
-      //   e.target[0].name,
-      //   e.target[0].value,
-      //   Object.fromEntries(new FormData(e.target))
-      // );
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!isSubmited) {
+      setIsSubmited(true);
+      setMailSentConfirmation(false);
+      const isValid = await trigger();
+      if (isValid) {
+        await sendEmail(e);
+      }
+    } else {
+      alert("Email was submited");
     }
   };
 
@@ -159,6 +160,7 @@ const Contact = ({ setSelectedPage }) => {
                 <p className="text-primary-2 mt-1 text-right drop-shadow-accent">
                   {errors.email.type === "required" && "This field is required"}
                   {errors.email.type === "pattern" && "Invalid email address"}
+                  {alert(" hey")}
                 </p>
               )}
             </div>
