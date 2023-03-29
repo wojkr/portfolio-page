@@ -87,7 +87,7 @@ const MySkills = ({ setSelectedPage }) => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }} //half div in view
+          viewport={{ once: true, amount: 0.25 }} //~half div in view
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
