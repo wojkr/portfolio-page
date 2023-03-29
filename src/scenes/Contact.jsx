@@ -34,6 +34,7 @@ const Contact = ({ setSelectedPage }) => {
         setIsSubmited(false);
       })
       .catch((error) => {
+        setMailSentConfirmation("Something went wrong, try again.");
         console.log(error);
         setIsSubmited(false);
       });
@@ -46,10 +47,16 @@ const Contact = ({ setSelectedPage }) => {
       setMailSentConfirmation(false);
       const isValid = await trigger();
       if (isValid) {
+        setMailSentConfirmation("Sending...");
         await sendEmail(e);
+      } else {
+        setIsSubmited(false);
       }
     } else {
-      alert("Email was submited");
+      const isValid = await trigger();
+      if (isValid) {
+        alert("Email was submited");
+      }
     }
   };
 
@@ -79,7 +86,6 @@ const Contact = ({ setSelectedPage }) => {
           </div>
         </div>
       </motion.div>
-
       {/* FORM & IMAGE */}
       <div className="md:flex md:justify-between gap-32 mt-5">
         <motion.div
@@ -160,7 +166,6 @@ const Contact = ({ setSelectedPage }) => {
                 <p className="text-primary-2 mt-1 text-right drop-shadow-accent">
                   {errors.email.type === "required" && "This field is required"}
                   {errors.email.type === "pattern" && "Invalid email address"}
-                  {alert(" hey")}
                 </p>
               )}
             </div>
