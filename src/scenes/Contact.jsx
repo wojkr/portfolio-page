@@ -16,6 +16,12 @@ const Contact = ({ setSelectedPage }) => {
     formState: { errors },
   } = useForm();
 
+  const mailMessages = {
+    success:
+      "Your email has been sent successfully. Thank you for contacting me!",
+    error: "Something went wrong, try again.",
+    await: "Sending...",
+  };
   const sendEmail = async (e) => {
     await fetch("https://formsubmit.co/ajax/2dfe1cb18982311021ec0a63158f3740", {
       method: "POST",
@@ -28,13 +34,11 @@ const Contact = ({ setSelectedPage }) => {
       .then((response) => response.json())
       .then((data) => {
         reset();
-        setMailSentConfirmation(
-          "Your email has been sent successfully. Thank you for contacting us!"
-        );
+        setMailSentConfirmation(mailMessages.success);
         setIsSubmited(false);
       })
       .catch((error) => {
-        setMailSentConfirmation("Something went wrong, try again.");
+        setMailSentConfirmation(mailMessages.error);
         console.log(error);
         setIsSubmited(false);
       });
@@ -47,7 +51,7 @@ const Contact = ({ setSelectedPage }) => {
       setMailSentConfirmation(false);
       const isValid = await trigger();
       if (isValid) {
-        setMailSentConfirmation("Sending...");
+        setMailSentConfirmation(mailMessages.await);
         await sendEmail(e);
       } else {
         setIsSubmited(false);
@@ -189,13 +193,26 @@ const Contact = ({ setSelectedPage }) => {
             </div>
             <div>
               <button
-                className="p-5 bg-primary-3 font-semibold  text-deep-primary1bg-primary-1 hover:bg-primary-2 hover:text-white transition duration-500"
+                className="p-5 bg-primary-3 font-semibold  text-dark-1 hover:bg-primary-2 hover:text-white transition duration-500"
                 type="submit"
               >
                 SEND ME A MESSAGE
               </button>
               {mailSentConfirmation && (
-                <p className="text-primary-3 mt-4 text-left drop-shadow-accent">
+                <p
+                  className={`${
+                    mailSentConfirmation === mailMessages.success
+                      ? "text-primary-3"
+                      : mailSentConfirmation === mailMessages.error
+                      ? "text-primary-2"
+                      : "text-primary-1"
+                  } mt-4 text-left drop-shadow-accent 
+                  ${
+                    mailSentConfirmation === mailMessages.await
+                      ? "animate-text"
+                      : ""
+                  }`}
+                >
                   {mailSentConfirmation}
                 </p>
               )}
