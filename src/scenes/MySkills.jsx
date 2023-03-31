@@ -27,13 +27,14 @@ import { TbClockPause, TbExchange } from "react-icons/tb";
 import skillsImage from "../assets/skills-image.jpg";
 
 const MySkills = ({ setSelectedPage }) => {
+  const isAboveMediumLargeScreens = useMediaQuery("(min-width:1300px)");
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <section id="skills" className="gap-16 py-10">
       {/* FIRST ROW */}
       <div className="md:flex justify-between md:text-start text-center md:items-start mt-32 gap-20">
         <motion.div
-          className="md:w-1/3  "
+          className="lg:w-1/3 md:w-1/2 "
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -70,14 +71,22 @@ const MySkills = ({ setSelectedPage }) => {
           </p>
         </motion.div>
         {/* /IMAGE */}
-        <div className=" flex-grow-1 ">
+        <div
+          className={isAboveMediumLargeScreens ? "flex-grow-1" : "w-50 m-auto"}
+        >
           {isAboveMediumScreens ? (
-            <motion.div className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full">
-              <img src={skillsImage} alt="" />
+            <motion.div
+            // className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full"
+            >
+              <img
+                src={skillsImage}
+                alt=""
+                className="mx-auto shadow-primary1"
+              />
             </motion.div>
           ) : (
             <motion.div>
-              <img src={skillsImage} alt="" />
+              <img src={skillsImage} alt="" className="mx-auto" />
             </motion.div>
           )}
         </div>

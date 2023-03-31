@@ -67,7 +67,7 @@ const Contact = ({ setSelectedPage }) => {
   const isAboveMediumScreen = useMediaQuery("(min-width:1060px)");
 
   return (
-    <section id="contact" className="py-48">
+    <section id="contact" className="pt-32">
       {/* HEADING */}
       <motion.div
         className="flex justify-center md:justify-end w-full  "
