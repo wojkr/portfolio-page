@@ -7,6 +7,8 @@ import projectImg4 from "../assets/project-4.jpg";
 import projectImg5 from "../assets/project-5.jpg";
 import projectImg6 from "../assets/project-6.jpg";
 import projectImg7 from "../assets/project-7.jpg";
+import projectImg8 from "../assets/project-8.jpg";
+import { SiGithub } from "react-icons/si";
 
 const container = {
   hidden: {},
@@ -19,25 +21,19 @@ const projectVariant = {
 };
 
 const Project = ({ title, name, desc, img }) => {
-  const overlayStyles = `absolute  h-full w-full max-w-[400px] opacity-0 hover:opacity-90 transition duration-500
+  const overlayStyles = `absolute h-full w-full max-w-[1000px] opacity-0 fit hover:opacity-90 transition duration-500
     bg-grey z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
-
-  // const projectTitle = title
-  //   .trim()
-  //   .trimLeft()
-  //   .split(" ")
-  //   .join("-")
-  //   .toLowerCase();
   return (
-    <motion.div variants={projectVariant} className="relative">
+    <motion.div variants={projectVariant} className="relative max-w-[1000px]">
       <div className={overlayStyles}>
         {name !== "" && <p className="text-2xl font-playfair ">{name}</p>}
-        <p className=" mt-7 sm:mt-0 lg:mt-7  font-playfair">{desc}</p>
+        <p className=" mt-7 sm:mt-0 lg:mt-7  ">{desc}</p>
       </div>
-      <img src={img} alt={name} />
+      <img className="" src={img} alt={name} />
     </motion.div>
   );
 };
+
 const Projects = ({ setSelectedPage }) => {
   return (
     <section id="projects" className="pt-48 pb-48">
@@ -59,7 +55,7 @@ const Projects = ({ setSelectedPage }) => {
         <div className="flex justify-center mt-5">
           <LineGradient width="w-1/3" />
         </div>
-        <p className="font-playfair text-sm mt-10 mb-2 ">
+        <p className="font-playfair text-sm mt-5 mb-2 ">
           I am constantly expanding my{" "}
           <span className="text-primary-1">knowledge</span> in my spare time
           after my job. Each project presented unique challenges that I was able
@@ -82,7 +78,7 @@ const Projects = ({ setSelectedPage }) => {
           variants={container}
           onViewportEnter={() => setSelectedPage("projects")}
         >
-          <div
+          {/* <div
             className="flex justify-center text-center items-center py-16 bg-primary-2
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
@@ -92,7 +88,14 @@ const Projects = ({ setSelectedPage }) => {
                 Visually Stunning UI
               </span>
             </p>
-          </div>
+          </div> */}
+
+          <Project
+            title="Project 8"
+            img={projectImg8}
+            name="Ride Rite"
+            desc="Responsive full-stack e-commerce app with Strapi CMS and secure Stripe payment processing platform. Formik and Yup for form validation. Built with React, Redux, and Material-UI."
+          />
           <Project
             title="Project 6"
             img={projectImg6}
@@ -136,15 +139,20 @@ const Projects = ({ setSelectedPage }) => {
             desc="The portfolio website that you are currently viewing was developed using a modern technology stack, which includes React, Tailwind, and Framer-Motion. My objective was to create a visually appealing design that highlights my work and skills in a professional and engaging manner."
           />
           <div
-            className="flex justify-center text-center items-center py-16 bg-primary-2
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
+            className="flex justify-center items-center py-16 bg-primary-2
+              max-w-[1000px] max-h-[1000px] text-2xl font-playfair font-semibold"
           >
-            <p className="">
-              BACK-END <br />
-              <span className="font-thin text-xl italic">
-                Refined, smooth UX
-              </span>
-            </p>
+            <a
+              href="https://github.com/wojkr"
+              target="_blank"
+              className="hover:text-dark-1 transition duration-500 text-center "
+              rel="noreferrer"
+            >
+              AND MORE:
+              <div className="flex justify-center mt-3">
+                <SiGithub size={48} />
+              </div>
+            </a>
           </div>
         </motion.div>
       </div>
