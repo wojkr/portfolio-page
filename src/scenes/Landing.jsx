@@ -53,9 +53,8 @@ const Landing = ({ setSelectedPage }) => {
             </span>
           </p>
           <p className="mt-10 mb-7 text-sm text-center md:text-start font-playfair">
-            I am a passionate and motivated individual who is eager to kickstart
-            my career in web development as a junior full-stack developer. I
-            have a degree in aircraft engines and I am also a talented musician.
+            I am a passionate and motivated web developer. I have a degree in
+            aircraft engines and I am also a talented musician.
           </p>
         </motion.div>
 
