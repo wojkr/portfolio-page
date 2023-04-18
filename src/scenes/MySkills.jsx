@@ -12,15 +12,17 @@ import {
   SiJavascript,
   SiMongodb,
   SiMui,
+  SiNextdotjs,
   SiNodedotjs,
   SiNpm,
   SiPhotopea,
+  SiPrisma,
   SiReact,
   SiRedux,
   SiSass,
+  SiStrapi,
   SiTailwindcss,
   SiTypescript,
-  SiVite,
 } from "react-icons/si";
 import { TbClockPause, TbExchange } from "react-icons/tb";
 
@@ -125,8 +127,8 @@ const MySkills = ({ setSelectedPage }) => {
               Redux <br /> Toolkit
             </div>
             <div className="flex flex-col justify-center items-center">
-              <SiVite className="text-5xl text-primary-1" />
-              Vite
+              <SiNextdotjs className="text-5xl text-primary-1" />
+              Next
             </div>
           </div>
           <div className="flex justify-evenly items-center my-5">
@@ -193,6 +195,16 @@ const MySkills = ({ setSelectedPage }) => {
             <div className="flex flex-col justify-center items-center">
               <SiMongodb className="text-5xl text-primary-2" />
               MongoDB
+            </div>
+          </div>
+          <div className="flex justify-evenly items-center my-5">
+            <div className="flex flex-col justify-center items-center">
+              <SiPrisma className="text-5xl text-primary-2" />
+              Prisma
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <SiStrapi className="text-5xl text-primary-2" />
+              Strapi
             </div>
           </div>
         </motion.div>
