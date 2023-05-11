@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
@@ -31,6 +31,13 @@ function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useLayoutEffect(() => {
+    const el = document.getElementById(window.location.hash.slice(1));
+    if (el) {
+      window.scroll(0, el.offsetTop);
+    }
+  }, [window.location.hash]);
 
   return (
     <div className="app bg-deep-blue relative">
