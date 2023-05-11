@@ -11,6 +11,9 @@ body,
   background-color: #2c233d;
   @apply text-white;
 }
+html {
+  overflow-x: hidden;
+}
 
 .animate-text {
   animation-name: text-animation;
@@ -21,10 +24,9 @@ body,
 .bg-pattern-landing {
   background-image: url(assets/pattern-landing.svg);
 }
-
-/* .bg-pattern-skills {
-
-} */
+.bg-pattern-skills {
+  background-image: url(assets/pattern-skills.svg);
+}
 .bg-pattern-projects {
   background-image: url(assets/pattern-projects.svg);
 }

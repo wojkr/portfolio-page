@@ -26,7 +26,7 @@ import {
 } from "react-icons/si";
 import { TbClockPause, TbExchange } from "react-icons/tb";
 
-import skillsImage from "../assets/skills-image.jpg";
+import skillsImage from "../assets/skills-image.png";
 
 const MySkills = ({ setSelectedPage }) => {
   const isAboveMediumLargeScreens = useMediaQuery("(min-width:1300px)");
@@ -77,14 +77,8 @@ const MySkills = ({ setSelectedPage }) => {
           className={isAboveMediumLargeScreens ? "flex-grow-1" : "w-50 m-auto"}
         >
           {isAboveMediumScreens ? (
-            <motion.div
-            // className="relative before:absolute before:z-[-1] before:-top-[40px] before:-left-[60px] before:border-primary-1 before:border-2 before:w-[100%] before:h-full"
-            >
-              <img
-                src={skillsImage}
-                alt=""
-                className="mx-auto shadow-primary1"
-              />
+            <motion.div>
+              <img src={skillsImage} alt="" className="mx-auto " />
             </motion.div>
           ) : (
             <motion.div>

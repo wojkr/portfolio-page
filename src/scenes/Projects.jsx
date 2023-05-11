@@ -8,6 +8,7 @@ import projectImg5 from "../assets/project-5.jpg";
 import projectImg6 from "../assets/project-6.jpg";
 import projectImg7 from "../assets/project-7.jpg";
 import projectImg8 from "../assets/project-8.jpg";
+import projectImg9 from "../assets/project-9.jpg";
 import { SiGithub } from "react-icons/si";
 
 const container = {
@@ -55,14 +56,21 @@ const Projects = ({ setSelectedPage }) => {
         <div className="flex justify-center mt-5">
           <LineGradient width="w-1/3" />
         </div>
-        <p className="font-playfair text-sm mt-5 mb-2 ">
+        <p className="font-playfair text-sm mt-5 mb-5 ">
           I am constantly expanding my{" "}
           <span className="text-primary-1">knowledge</span> in my spare time
           after my job. Each project presented unique challenges that I was able
           to overcome through <span className="text-primary-1">creativity</span>{" "}
           and <span className="text-primary-1">problem-solving</span> skills.
         </p>
-        <p className="font-playfair text-sm mb-7 ">
+        <a
+          className=" bg-gradient-1 text-dark-1 py-3 px-7 font-playfair font-semibold  hover:text-white transition duration-500 mt-[100px] "
+          href="https://wojkr.github.io/projects/#"
+          target="_blank"
+        >
+          LIVE PROJECTS
+        </a>
+        <p className="font-playfair text-sm mt-5 mb-7 ">
           Through my training in various technologies, I have developed the
           following projects:
         </p>
@@ -78,18 +86,12 @@ const Projects = ({ setSelectedPage }) => {
           variants={container}
           onViewportEnter={() => setSelectedPage("projects")}
         >
-          {/* <div
-            className="flex justify-center text-center items-center py-16 bg-primary-2
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            <p className="">
-              FRONT-END <br />
-              <span className="font-thin text-xl italic">
-                Visually Stunning UI
-              </span>
-            </p>
-          </div> */}
-
+          <Project
+            title="Project 9"
+            img={projectImg9}
+            name="Nomad Hive"
+            desc="This is an online marketplace app that connects travelers with short-term homestays and experiences worldwide. Built with React, Next.js, Prisma, and MongoDB."
+          />
           <Project
             title="Project 8"
             img={projectImg8}
@@ -138,7 +140,7 @@ const Projects = ({ setSelectedPage }) => {
             name=""
             desc="The portfolio website that you are currently viewing was developed using a modern technology stack, which includes React, Tailwind, and Framer-Motion. My objective was to create a visually appealing design that highlights my work and skills in a professional and engaging manner."
           />
-          <div
+          {/* <div
             className="flex justify-center items-center py-16 bg-primary-2
               max-w-[1000px] max-h-[1000px] text-2xl font-playfair font-semibold"
           >
@@ -153,7 +155,7 @@ const Projects = ({ setSelectedPage }) => {
                 <SiGithub size={48} />
               </div>
             </a>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

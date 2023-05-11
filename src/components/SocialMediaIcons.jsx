@@ -1,4 +1,5 @@
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { TbBuildingBroadcastTower } from "react-icons/tb";
 
 const SocialMediaIcons = ({ color = false }) => {
   return (
@@ -23,6 +24,14 @@ const SocialMediaIcons = ({ color = false }) => {
         rel="noreferrer"
       >
         <SiGithub />
+      </a>
+      <a
+        href="https://wojkr.github.io/projects/"
+        target="_blank"
+        className="hover:opacity-50 transition duration-500 h-[30px] w-[30px]"
+        rel="noreferrer"
+      >
+        <TbBuildingBroadcastTower />
       </a>
     </div>
   );
