@@ -37,7 +37,7 @@ const Link = ({
         setIsMenuToggled(false);
       }}
     >
-      {page}
+      {page.toUpperCase()}
     </AnchorLink>
   );
 };
@@ -57,7 +57,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
         {/* DESKTOP NAV */}
         {isAboveMediumScreens ? (
-          <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
+          <div className="flex justify-between gap-16 font-light tracking-wider text-lg ">
             <Link
               page="Home"
               selectedPage={selectedPage}
