@@ -16,8 +16,6 @@ function App() {
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
-      // console.log(window.scrollY);
-      // console.log("get");
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
         setSelectedPage("home");
@@ -33,11 +31,13 @@ function App() {
   }, []);
 
   useLayoutEffect(() => {
-    const el = document.getElementById(window.location.hash.slice(1));
-    if (el) {
-      window.scroll(0, el.offsetTop);
-    }
-  }, [window.location.hash]);
+    setTimeout(() => {
+      const el = document.getElementById(window.location.hash.slice(1));
+      if (el) {
+        window.scroll(0, el.offsetTop);
+      }
+    }, 200);
+  }, []);
 
   return (
     <div className="app bg-deep-blue relative">
