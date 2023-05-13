@@ -35,13 +35,12 @@ const Contact = ({ setSelectedPage }) => {
       .then((data) => {
         reset();
         setMailSentConfirmation(mailMessages.success);
-        setIsSubmited(false);
       })
       .catch((error) => {
         setMailSentConfirmation(mailMessages.error);
         console.log(error);
-        setIsSubmited(false);
-      });
+      })
+      .finally(() => setIsSubmited(false));
   };
 
   const onSubmit = async (e) => {
@@ -55,11 +54,6 @@ const Contact = ({ setSelectedPage }) => {
         await sendEmail(e);
       } else {
         setIsSubmited(false);
-      }
-    } else {
-      const isValid = await trigger();
-      if (isValid) {
-        alert("Email was submited");
       }
     }
   };
@@ -131,6 +125,7 @@ const Contact = ({ setSelectedPage }) => {
             // target="_blank"
             onSubmit={onSubmit}
             // method="POST"
+            novalidate
           >
             {/* NAME */}
             <div className="mb-4">
@@ -160,7 +155,8 @@ const Contact = ({ setSelectedPage }) => {
               <input
                 className="w-full bg-primary-1 font-semibold placeholder-opaque-black p-3"
                 placeholder="EMAIL"
-                type="email"
+                type="text"
+                formnovalidate="formnovalidate"
                 {...register("email", {
                   required: true,
                   pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/,
@@ -192,12 +188,21 @@ const Contact = ({ setSelectedPage }) => {
               )}
             </div>
             <div>
-              <button
-                className="p-5 bg-primary-3 font-semibold  text-dark-1 hover:bg-primary-2 hover:text-white transition duration-500"
-                type="submit"
-              >
-                SEND ME A MESSAGE
-              </button>
+              {!isSubmited ? (
+                <button
+                  className="p-5 bg-primary-3 font-semibold  text-dark-1 hover:bg-primary-2 hover:text-white transition duration-500"
+                  type="submit"
+                >
+                  SEND ME A MESSAGE
+                </button>
+              ) : (
+                <button
+                  className="p-5 bg-primary-1 font-semibold  text-dark-1"
+                  disabled
+                >
+                  SENDING...
+                </button>
+              )}
               {mailSentConfirmation && (
                 <p
                   className={`${
