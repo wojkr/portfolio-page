@@ -28,7 +28,7 @@ const Project = ({ title, name, desc, img }) => {
     <motion.div variants={projectVariant} className="relative max-w-[1000px]">
       <div className={overlayStyles}>
         {name !== "" && <p className="text-2xl font-playfair ">{name}</p>}
-        <p className=" mt-7 sm:mt-0 lg:mt-7  ">{desc}</p>
+        <p className=" mt-7 sm:mt-0 lg:mt-7 font-normal ">{desc}</p>
       </div>
       <img className="" src={img} alt={name} />
     </motion.div>
@@ -56,7 +56,7 @@ const Projects = ({ setSelectedPage }) => {
         <div className="flex justify-center mt-5">
           <LineGradient width="w-1/3" />
         </div>
-        <p className="font-playfair text-sm mt-5 mb-5 ">
+        <p className=" text-sm mt-5 mb-5 ">
           I am constantly expanding my{" "}
           <span className="text-primary-1">knowledge</span> in my spare time
           after my job. Each project presented unique challenges that I was able
@@ -64,13 +64,14 @@ const Projects = ({ setSelectedPage }) => {
           and <span className="text-primary-1">problem-solving</span> skills.
         </p>
         <a
-          className=" bg-gradient-1 text-dark-1 py-3 px-7 font-playfair font-semibold  hover:text-white transition duration-500 mt-[100px] "
+          className=" bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 mt-[100px] "
           href="https://wojkr.github.io/projects/#"
           target="_blank"
+          rel="noreferrer"
         >
           LIVE PROJECTS
         </a>
-        <p className="font-playfair text-sm mt-5 mb-7 ">
+        <p className="text-sm mt-5 mb-7 ">
           Through my training in various technologies, I have developed the
           following projects:
         </p>

@@ -54,7 +54,7 @@ const MySkills = ({ setSelectedPage }) => {
           <div className="flex justify-center md:justify-start my-5">
             <LineGradient width="w-1/4" />
           </div>
-          <p className="font-playfair font-extralight text-sm mt-5 mb-10  drop-shadow-accent ">
+          <p className="font-extralight text-sm mt-5 mb-10  drop-shadow-accent ">
             My background includes a bachelor's degree in mechanical
             engineering, which provided me with a deep understanding of design
             and problem-solving. Furthermore, I have honed my{" "}
@@ -88,7 +88,7 @@ const MySkills = ({ setSelectedPage }) => {
         </div>
       </div>
       {/* SKILLS */}
-      <section className="md:flex justify-between md:items-start md:h-full mt-32 md:gap-16 font-playfair text-sm">
+      <section className="md:flex justify-between md:items-start md:h-full mt-32 md:gap-16 text-sm">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -110,42 +110,37 @@ const MySkills = ({ setSelectedPage }) => {
             </p>
           </div>
 
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              {" "}
-              <SiReact className="text-5xl text-primary-1" />
+          <div className="grid gap-4 grid-cols-3 text-center my-5 place-items-center">
+            <div className="">
+              <SiReact className="text-5xl text-primary-1 mx-auto" />
               React
             </div>
-            <div className="flex flex-col justify-center items-center  text-center">
-              <SiRedux className="text-5xl text-primary-1" />
-              Redux <br /> Toolkit
+            <div className="">
+              <SiRedux className="text-5xl text-primary-1 mx-auto" />
+              Redux Toolkit
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiNextdotjs className="text-5xl text-primary-1" />
+            <div className="">
+              <SiNextdotjs className="text-5xl text-primary-1 mx-auto" />
               Next
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              <SiTailwindcss className="text-5xl text-primary-1" />
+            <div className="">
+              <SiTailwindcss className="text-5xl text-primary-1 mx-auto" />
               Tailwind
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiMui className="text-5xl text-primary-1" />
+            <div className="">
+              <SiMui className="text-5xl text-primary-1 mx-auto" />
               MUI
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiBootstrap className="text-5xl text-primary-1" />
+            <div className="text-center">
+              <SiBootstrap className="text-5xl text-primary-1 mx-auto" />
               Bootstrap
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              <SiSass className="text-5xl text-primary-1" />
+            <div className="">
+              <SiSass className="text-5xl text-primary-1 mx-auto" />
               SCSS{" "}
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiPhotopea className="text-5xl text-primary-1" />
+            <div className="">
+              <SiPhotopea className="text-5xl text-primary-1 mx-auto" />
               Photopea
             </div>
           </div>
@@ -170,34 +165,30 @@ const MySkills = ({ setSelectedPage }) => {
               End:
             </p>
           </div>
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              <SiNodedotjs className="text-5xl text-primary-2" />
+
+          <div className="grid gap-4 grid-cols-2 text-center my-5 place-items-center">
+            <div className="">
+              <SiNodedotjs className="text-5xl text-primary-2 mx-auto" />
               Node.js
             </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <SiNpm className="text-5xl text-primary-2" />
-              Node Package
-              <br /> Manager
+            <div className="">
+              <SiNpm className="text-5xl text-primary-2 mx-auto" />
+              NPM
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              <SiExpress className="text-5xl text-primary-2" />
+            <div className="">
+              <SiExpress className="text-5xl text-primary-2 mx-auto" />
               Express
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiMongodb className="text-5xl text-primary-2" />
+            <div className="">
+              <SiMongodb className="text-5xl text-primary-2 mx-auto" />
               MongoDB
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5">
-            <div className="flex flex-col justify-center items-center">
-              <SiPrisma className="text-5xl text-primary-2" />
+            <div className="">
+              <SiPrisma className="text-5xl text-primary-2 mx-auto" />
               Prisma
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiStrapi className="text-5xl text-primary-2" />
+            <div className="">
+              <SiStrapi className="text-5xl text-primary-2 mx-auto" />
               Strapi
             </div>
           </div>
@@ -222,50 +213,42 @@ const MySkills = ({ setSelectedPage }) => {
               More:
             </p>
           </div>
-          <div className="flex justify-evenly items-center my-5 text-center">
-            <div className="flex flex-col justify-center items-center">
-              {" "}
-              <SiJavascript className="text-5xl text-primary-3" />
+
+          <div className="grid gap-4 grid-cols-3 text-center my-5 place-items-center">
+            <div className="">
+              <SiJavascript className="text-5xl text-primary-3 mx-auto" />
               Javascript
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiTypescript className="text-5xl text-primary-3" />
+            <div className="">
+              <SiTypescript className="text-5xl text-primary-3 mx-auto" />
               Typescript
             </div>
-          </div>
-
-          <div className="flex justify-evenly items-center my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <SiGit className="text-5xl text-primary-3" />
+            <div className="">
+              <SiGit className="text-5xl text-primary-3 mx-auto" />
               Git
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiGithub className="text-5xl text-primary-3" />
+            <div className="">
+              <SiGithub className="text-5xl text-primary-3 mx-auto" />
               GitHub
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <SiHoppscotch className="text-5xl text-primary-3" />
+            <div className="">
+              <SiHoppscotch className="text-5xl text-primary-3 mx-auto" />
               Hoppscotch
             </div>
-            <div className="flex flex-col justify-center items-center text-center">
-              <TbExchange className="text-5xl text-primary-3" />
-              REST <br />
-              API
+            <div className="">
+              <TbExchange className="text-5xl text-primary-3 mx-auto" />
+              REST API
             </div>
-            <div className="flex flex-col justify-center items-center ">
-              <TbClockPause className="text-5xl text-primary-3 " />
+            <div className="">
+              <TbClockPause className="text-5xl text-primary-3 mx-auto " />
               AJAX
             </div>
-          </div>
-          <div className="flex justify-evenly items-center my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <SiFirebase className="text-5xl text-primary-3" />
+            <div className="">
+              <SiFirebase className="text-5xl text-primary-3 mx-auto" />
               Firebase
             </div>
-            <div className="flex flex-col justify-center items-center">
-              <SiGoogle className="text-5xl text-primary-3" />
+            <div className="">
+              <SiGoogle className="text-5xl text-primary-3 mx-auto" />
               Googling
             </div>
           </div>

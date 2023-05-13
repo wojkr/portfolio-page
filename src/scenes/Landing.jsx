@@ -52,7 +52,7 @@ const Landing = ({ setSelectedPage }) => {
               <span className="text-6xl z-30"> K</span>RUPA
             </span>
           </p>
-          <p className="mt-10 mb-7 text-sm text-center md:text-start font-playfair">
+          <p className="mt-10 mb-7 text-sm text-center md:text-start ">
             I am a passionate and motivated web developer. I have a degree in
             aircraft engines and I am also a talented musician.
           </p>
@@ -71,18 +71,18 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-1 text-dark-1 py-3 px-7  font-playfair font-semibold  hover:text-white transition duration-500"
+            className="bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounder-r-sm bg-gradient-1 py-0.5 pr-0.5"
+            className="rounder-r-sm bg-gradient-1 py-0.5 pr-0.5 font-semibold "
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            <div className="bg-dark-1 hover:text-primary-2 transition duration-500 w-full h-full flex items-center justify-center font-playfair px-10">
+            <div className="bg-dark-1 hover:text-primary-2 transition duration-500 w-full h-full flex items-center justify-center px-10">
               Let's talk.
             </div>
           </AnchorLink>
