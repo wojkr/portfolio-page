@@ -27,12 +27,12 @@ module.exports = {
         "opaque-black": "rgba(0,0,0,0.35)",
       },
       backgroundImage: (theme) => ({
-        "gradient-rainbow":
-          "linear-gradient(81.66deg, #00B5EE 7.21%, #FF45A4 45.05%, #FFBA00 78.07%)",
-
-        "gradient-1":
-          // "linear-gradient(90deg, #3CAEA3 14.53%, #F39C12 69.36%, #97CE4C 117.73%)",
+        "gradient-3":
+          "linear-gradient(70deg, hsl(75, 57%, 55%),hsl(95, 57%, 55%))",
+        "gradient-2":
           "linear-gradient(70deg, hsl(27, 90%, 51%),hsl(47, 90%, 51%))",
+        "gradient-1":
+          "linear-gradient(70deg, hsl(164,49%,46%),hsl(184,49%,46%))",
       }),
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
