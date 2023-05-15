@@ -1,4 +1,4 @@
-import LineGradient from "../components/LineGradient";
+import LineGradientPrimary3 from "../components/LineGradient3";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -80,7 +80,7 @@ const Contact = ({ setSelectedPage }) => {
             <span className="text-primary-3 ">CONTACT</span> ME
           </p>
           <div className="flex justify-center md:justify-end my-5">
-            <LineGradient width="w-1/2" />
+            <LineGradientPrimary3 width="w-1/2" />
           </div>
         </div>
       </motion.div>
@@ -125,7 +125,7 @@ const Contact = ({ setSelectedPage }) => {
             // target="_blank"
             onSubmit={onSubmit}
             // method="POST"
-            novalidate
+            noValidate
           >
             {/* NAME */}
             <div className="mb-4">
@@ -156,7 +156,7 @@ const Contact = ({ setSelectedPage }) => {
                 className="w-full bg-primary-1 font-semibold placeholder-opaque-black p-3"
                 placeholder="EMAIL"
                 type="text"
-                formnovalidate="formnovalidate"
+                formNoValidate="formnovalidate"
                 {...register("email", {
                   required: true,
                   pattern: /[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$/,
