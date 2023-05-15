@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import LineGradient from "../components/LineGradient";
+import LineGradient1 from "../components/LineGradient1";
 import projectImg1 from "../assets/project-1.jpg";
 import projectImg2 from "../assets/project-2.jpg";
 import projectImg3 from "../assets/project-3.jpg";
@@ -23,7 +23,7 @@ const projectVariant = {
 
 const Project = ({ title, name, desc, img }) => {
   const overlayStyles = `absolute h-full w-full max-w-[1000px] opacity-0 fit hover:opacity-90 transition duration-500
-    bg-grey z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
+    bg-primary-light-1 z-30 flex flex-col justify-center items-center text-center text-sm md:text-base md:p-10  p-0 text-dark-1`;
   return (
     <motion.div variants={projectVariant} className="relative max-w-[1000px]">
       <div className={overlayStyles}>
@@ -54,17 +54,18 @@ const Projects = ({ setSelectedPage }) => {
           <span className="text-primary-1">PRO</span>JECTS
         </p>
         <div className="flex justify-center mt-5">
-          <LineGradient width="w-1/3" />
+          <LineGradient1 width="w-1/3" />
         </div>
         <p className=" text-sm mt-5 mb-5 ">
           I am constantly expanding my{" "}
-          <span className="text-primary-1">knowledge</span> in my spare time
-          after my job. Each project presented unique challenges that I was able
-          to overcome through <span className="text-primary-1">creativity</span>{" "}
-          and <span className="text-primary-1">problem-solving</span> skills.
+          <span className="text-primary-light-1">knowledge</span> in my spare
+          time after my job. Each project presented unique challenges that I was
+          able to overcome through{" "}
+          <span className="text-primary-light-1">creativity</span> and{" "}
+          <span className="text-primary-light-1">problem-solving</span> skills.
         </p>
         <a
-          className=" bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 mt-[100px] "
+          className="bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 mt-[100px] "
           href="https://wojkr.github.io/projects/#"
           target="_blank"
           rel="noreferrer"

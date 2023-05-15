@@ -3,7 +3,9 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import Navbar from "./scenes/Navbar";
 import DotGroup from "./scenes/DotGroup";
 import Landing from "./scenes/Landing";
-import LineGradient from "./components/LineGradient";
+import LineGradient from "./components/LineGradient2";
+import LineGradientPrimary1 from "./components/LineGradient1";
+import LineGradientPrimary3 from "./components/LineGradient3";
 import MySkills from "./scenes/MySkills";
 import Projects from "./scenes/Projects";
 import Contact from "./scenes/Contact";
@@ -47,7 +49,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <div className="bg-pattern-landing">
-        <div className="w-5/6 mx-auto md:min-h-full">
+        <div className="w-5/6 mx-auto">
           {isAboveMediumScreens && (
             <DotGroup
               selectedPage={selectedPage}
@@ -58,22 +60,23 @@ function App() {
         </div>
       </div>
       <LineGradient />
-      <div className="w-5/6 mx-auto md:min-h-full">
+      <div className="w-5/6 mx-auto">
         <MySkills setSelectedPage={setSelectedPage} />
       </div>
-      <LineGradient />
+      <LineGradientPrimary1 />
       <div className="bg-pattern-projects">
         <div className="w-5/6 mx-auto">
           <Projects setSelectedPage={setSelectedPage} />
         </div>
       </div>
-      <LineGradient />
-      <div className="w-5/6 mx-auto">
-        <Contact setSelectedPage={setSelectedPage} />
+      <LineGradientPrimary3 />
+      <div className="md:min-h-[100dvh] flex flex-col ">
+        <div className="w-5/6 mx-auto flex-grow flex flex-col justify-center">
+          <Contact setSelectedPage={setSelectedPage} />
+        </div>
+        <Airplane height={"140px"} />
+        <Footer className="z-10 mt-auto" />
       </div>
-
-      <Airplane height={"140px"} />
-      <Footer className="z-10" />
     </div>
   );
 }

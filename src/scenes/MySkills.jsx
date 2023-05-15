@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import useMediaQuery from "../hooks/useMediaQuery";
-import LineGradient from "../components/LineGradient";
+import LineGradient from "../components/LineGradient2";
 import {
   SiBootstrap,
   SiExpress,
@@ -32,7 +32,10 @@ const MySkills = ({ setSelectedPage }) => {
   const isAboveMediumLargeScreens = useMediaQuery("(min-width:1300px)");
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
-    <section id="skills" className="gap-16 py-10">
+    <section
+      id="skills"
+      className="gap-16 py-10 min-h-[100dvh] flex flex-col justify-center"
+    >
       {/* FIRST ROW */}
       <div className="md:flex justify-between md:text-start text-center md:items-start mt-32 gap-20">
         <motion.div
@@ -58,18 +61,20 @@ const MySkills = ({ setSelectedPage }) => {
             My background includes a bachelor's degree in mechanical
             engineering, which provided me with a deep understanding of design
             and problem-solving. Furthermore, I have honed my{" "}
-            <span className="text-primary-2 ">creativity</span> as a talented
-            musician, having taught drums for Yamaha Music Europe. With
-            <span className="text-primary-2 "> experience </span>
+            <span className="text-primary-light-2 ">creativity</span> as a
+            talented musician, having taught drums for Yamaha Music Europe. With
+            <span className="text-primary-light-2"> experience </span>
             as a customer advisor in a finance company and currently working as
             an assistant manager in a hotel, I have excellent{" "}
-            <span className="text-primary-2 ">communication skills </span> and I
-            am great with customers.
+            <span className="text-primary-light-2">
+              communication skills{" "}
+            </span>{" "}
+            and I am great with customers.
             <br /> I am confident that my combination of technical{" "}
-            <span className="text-primary-2 ">knowledge</span> and creativity,
-            as well as my ability to communicate effectively, make me a{" "}
-            <span className="text-primary-2 ">strong candidate</span> for junior
-            web development position.
+            <span className="text-primary-light-2">knowledge</span> and
+            creativity, as well as my ability to communicate effectively, make
+            me a <span className="text-primary-light-2">strong candidate</span>{" "}
+            for junior web development position.
           </p>
         </motion.div>
         {/* /IMAGE */}

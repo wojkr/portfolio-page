@@ -10,12 +10,12 @@ const Landing = ({ setSelectedPage }) => {
   return (
     <section
       id="home"
-      className="md:flex justify-between md:items-center md:h-full gap-16 py-10"
+      className="flex md:justify-between justify-center md:flex-row flex-col  md:items-center gap-16 py-24 min-h-[100dvh]"
     >
       {/* IMAGE */}
       <motion.div
         onViewportEnter={() => setSelectedPage("home")}
-        className="md:order-2 flex justify-center basis-3/5 z-10 mt-16 md:mt-32 "
+        className="md:order-2 flex justify-center basis-3/5 z-10 md:mt-16 "
       >
         {isAboveMediumScreens ? (
           <div className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-[400px] before:w-full before:max-w-[400px] before:h-full before:max-h-[400px] md:before:max-w-[600px] md:before:max-h-[600px] before:border-2 before:border-primary-1 before:z-[-1]">
@@ -34,7 +34,7 @@ const Landing = ({ setSelectedPage }) => {
         )}
       </motion.div>
       {/* MAIN SECTION */}
-      <div className="z-30 basis-2/5 mt-12 md:mt-32">
+      <div className="z-30 basis-2/5">
         {/* HEADINGS */}
         <motion.div
           initial="hidden"
@@ -71,14 +71,14 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500"
+            className="bg-gradient-2 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounder-r-sm bg-gradient-1 py-0.5 pr-0.5 font-semibold "
+            className="rounder-r-sm bg-gradient-2 py-0.5 pr-0.5 font-semibold "
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
