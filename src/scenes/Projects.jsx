@@ -65,7 +65,7 @@ const Projects = ({ setSelectedPage }) => {
           <span className="text-primary-light-1">problem-solving</span> skills.
         </p>
         <a
-          className="bg-gradient-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 mt-[100px] "
+          className="bg-1 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 mt-[100px] "
           href="https://wojkr.github.io/projects/#"
           target="_blank"
           rel="noreferrer"
