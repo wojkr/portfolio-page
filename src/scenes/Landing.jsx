@@ -70,22 +70,24 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <AnchorLink
-            className="bg-gradient-2 text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500"
-            onClick={() => setSelectedPage("contact")}
-            href="#contact"
-          >
-            Contact Me
-          </AnchorLink>
-          <AnchorLink
-            className="rounder-r-sm bg-gradient-2 py-0.5 pr-0.5 font-semibold "
-            onClick={() => setSelectedPage("contact")}
-            href="#contact"
-          >
-            <div className="bg-dark-1 hover:text-primary-2 transition duration-500 w-full h-full flex items-center justify-center px-10">
-              Let's talk.
-            </div>
-          </AnchorLink>
+          <div className="flex bg-2">
+            <AnchorLink
+              className=" text-dark-1 py-3 px-7 font-semibold  hover:text-white transition duration-500 "
+              onClick={() => setSelectedPage("contact")}
+              href="#contact"
+            >
+              Contact Me
+            </AnchorLink>
+            <AnchorLink
+              className="rounder-r-sm py-0.5 pr-0.5 font-semibold "
+              onClick={() => setSelectedPage("contact")}
+              href="#contact"
+            >
+              <div className="bg-dark-1 hover:text-primary-2 transition duration-500 w-full h-full flex items-center justify-center px-10">
+                Let's talk.
+              </div>
+            </AnchorLink>
+          </div>
         </motion.div>
         <motion.div
           className="flex mt-5 justify-center md:justify-start"
