@@ -3,10 +3,11 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import LineGradient from "../components/LineGradient2";
 import {
   SiBootstrap,
+  SiCsharp,
+  SiDotnet,
   SiExpress,
   SiFirebase,
   SiGit,
-  SiGithub,
   SiGoogle,
   SiHoppscotch,
   SiJavascript,
@@ -15,6 +16,7 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiNpm,
+  SiNuget,
   SiPhotopea,
   SiPrisma,
   SiReact,
@@ -24,7 +26,9 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
-import { TbClockPause, TbExchange } from "react-icons/tb";
+import { DiDotnet } from "react-icons/di";
+import { TbExchange } from "react-icons/tb";
+import { FaRobot } from "react-icons/fa";
 
 import skillsImage from "../assets/skills-image.png";
 
@@ -171,22 +175,34 @@ const MySkills = ({ setSelectedPage }) => {
             </p>
           </div>
 
-          <div className="grid gap-4 grid-cols-2 text-center my-5 place-items-center">
+          <div className="grid gap-4 grid-cols-3 text-center my-5 place-items-center">
+            <div className="">
+              <SiDotnet className="text-5xl text-primary-2 mx-auto" />
+              .NET
+            </div>
             <div className="">
               <SiNodedotjs className="text-5xl text-primary-2 mx-auto" />
               Node.js
-            </div>
-            <div className="">
-              <SiNpm className="text-5xl text-primary-2 mx-auto" />
-              NPM
             </div>
             <div className="">
               <SiExpress className="text-5xl text-primary-2 mx-auto" />
               Express
             </div>
             <div className="">
+              <SiNuget className="text-5xl text-primary-2 mx-auto" />
+              Nuget
+            </div>
+            <div className="">
+              <SiNpm className="text-5xl text-primary-2 mx-auto" />
+              NPM
+            </div>
+            <div className="">
               <SiMongodb className="text-5xl text-primary-2 mx-auto" />
               MongoDB
+            </div>
+            <div className="">
+              <DiDotnet className="text-5xl text-primary-2 mx-auto" />
+              Entity Framework
             </div>
             <div className="">
               <SiPrisma className="text-5xl text-primary-2 mx-auto" />
@@ -221,6 +237,10 @@ const MySkills = ({ setSelectedPage }) => {
 
           <div className="grid gap-4 grid-cols-3 text-center my-5 place-items-center">
             <div className="">
+              <SiCsharp className="text-5xl text-primary-3 mx-auto" />
+              C#
+            </div>
+            <div className="">
               <SiJavascript className="text-5xl text-primary-3 mx-auto" />
               Javascript
             </div>
@@ -233,10 +253,6 @@ const MySkills = ({ setSelectedPage }) => {
               Git
             </div>
             <div className="">
-              <SiGithub className="text-5xl text-primary-3 mx-auto" />
-              GitHub
-            </div>
-            <div className="">
               <SiHoppscotch className="text-5xl text-primary-3 mx-auto" />
               Hoppscotch
             </div>
@@ -245,8 +261,8 @@ const MySkills = ({ setSelectedPage }) => {
               REST API
             </div>
             <div className="">
-              <TbClockPause className="text-5xl text-primary-3 mx-auto " />
-              AJAX
+              <FaRobot className="text-5xl text-primary-3 mx-auto " />
+              AI tools
             </div>
             <div className="">
               <SiFirebase className="text-5xl text-primary-3 mx-auto" />
