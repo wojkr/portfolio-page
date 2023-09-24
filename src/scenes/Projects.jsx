@@ -9,7 +9,6 @@ import projectImg6 from "../assets/project-6.jpg";
 import projectImg7 from "../assets/project-7.jpg";
 import projectImg8 from "../assets/project-8.jpg";
 import projectImg9 from "../assets/project-9.jpg";
-import { SiGithub } from "react-icons/si";
 
 const container = {
   hidden: {},
