@@ -75,7 +75,7 @@ function App() {
           <Contact setSelectedPage={setSelectedPage} />
         </div>
         <Airplane height={"140px"} />
-        <Footer className="z-10 mt-auto" />
+        <Footer setSelectedPage={setSelectedPage} className="z-10 mt-auto" />
       </div>
     </div>
   );
