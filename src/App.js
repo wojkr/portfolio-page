@@ -17,6 +17,8 @@ function App() {
   const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   useEffect(() => {
+    ///redirect to new version
+    window.location.replace("https://wojkr.github.io/portfolio");
     const handleScroll = () => {
       if (window.scrollY === 0) {
         setIsTopOfPage(true);
